@@ -1,24 +1,67 @@
-# README
+# Conditional Get Cache demo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## API Endpoints
 
-Things you may want to cover:
+Content-Type: application/json
 
-* Ruby version
+### GET `/books`
 
-* System dependencies
+* Response: 
 
-* Configuration
+```
+{
+  "id": 1,
+  "author": "J.K Rowling",
+  "title": "Harry Potter",
+  "introduction": "Bla bla bla",
+  "published_at": "2008-12-29",
+  "created_at": "2018-12-29T09:43:27.074Z",
+  "updated_at": "2018-12-29T09:43:27.074Z"
+}
+```
 
-* Database creation
+### POST `/books`
 
-* Database initialization
+* Request:
 
-* How to run the test suite
+```
+{
+  "books": {
+    "title": "Harry Potter",
+    "author": "Tongfei",
+    "introduction": "",
+    "published_at": "2018-12-29"
+  }
+}
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+* Response:
 
-* Deployment instructions
+```
+{
+  "success": true // false
+}
+```
 
-* ...
+### PUT `/books/:id`
+
+* Request: 
+
+```
+{
+  "books": {
+    "title": "Harry Potter",
+    "author": "Tongfei",
+    "introduction": "",
+    "published_at": "2018-12-29"
+  }
+}
+```
+
+* Response:
+
+```
+{
+  "success": true
+}
+```
